@@ -1,0 +1,3 @@
+(executable 
+    (name miner)
+    (libraries blake2 hex))
