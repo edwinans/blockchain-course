@@ -22,7 +22,7 @@ let encode_int n =
 let hash_value h n = 
     let res = Bytes.cat h (encode_int n)
     in 
-    hash res
+        hash res
 
 let string_of_bytes b = show(of_bytes(b)) 
 
