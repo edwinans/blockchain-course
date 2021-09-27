@@ -1,5 +1,5 @@
-open Blake2;;
-open Hex;;
+open Blake2
+open Hex
 
 let hash b = 
     let res = Blake2b.direct b 32 in 

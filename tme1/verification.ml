@@ -42,12 +42,12 @@ let verify state_hash state_string =
 
 let verify_file file = 
     let chan = open_in file in
-        let i = ref 0 in
+        let i = ref 1 in
         try while true; do
             let expected = input_line chan in
             let data = input_line chan in
-            let x = input_line chan in
-            if(verify expected data) then printf "%s ok\n" x else printf " case %d is false\n" !i;
+            let _ = input_line chan in
+            if(verify expected data) then printf "case %d: ok\n" !i else printf "case %d: nok\n" !i;
             i := !i + 1; 
         done; 
         with End_of_file -> close_in chan
@@ -78,4 +78,3 @@ let _ =
         print_state (decode_state (encode_state [ac1;ac2;ac3;ac4;ac5]));
         verify_file "tme1-data.txt"
     end
-        
