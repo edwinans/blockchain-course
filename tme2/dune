@@ -1,0 +1,3 @@
+(executable 
+    (name merkle)
+    (libraries blake2 hex))
