@@ -81,5 +81,7 @@ let _ =
         );
         let w = find_witness m (Node(hash (Bytes.of_string "c"),Nil,Nil)) in 
         Format.printf "witness:@\n%a@." pp w;
-
+        print_endline (string_of_bool
+            (verify w (bytes_of_hex "99cf46edb69d02e18cce4989225f80386ff39d8b355cdea2971b532f901a055d"))
+        )
     end
